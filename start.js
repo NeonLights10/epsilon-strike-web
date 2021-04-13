@@ -3,6 +3,14 @@ const mongoose = require('mongoose');
 var fs = require('fs')
 var https = require('https')
 
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/s-neon.xyz/privkey.pem', 'utf8')
+const certificate = fs.readFileSync('/etc/letsencrypt/live/s-neon.xyz/fullchain.pem', 'utf8')
+
+const credentials = {
+   key: privateKey,
+   cert: certificate
+}
+
 mongoose.connect(process.env.DATABASE, {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -19,9 +27,6 @@ mongoose.connection
 require('./models/Warn');
 const app = require('./app');
 
-const server = https.createServer({
-  key: fs.readFileSync('server.key'),
-  cert: fs.readFileSync('server.cert')
-}, app).listen(3000, () => {
+const server = https.createServer(credentials, app).listen(3000, () => {
   console.log(`Express is running on port ${server.address().port}`);
 });
