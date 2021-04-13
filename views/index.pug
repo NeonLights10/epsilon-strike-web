@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title= `${title}`
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='https://code.jquery.com/jquery-3.6.0.min.js')
+  body#home
+    div.splashbanner
+      img(src="/images/pubcord-logo.png" width="480px")
+      h2(style="margin-top: 30px;") Strike Database Web App
+      div(style="margin-top: 30px;")
+        if isAuthenticated
+          a(href="/logout" style="margin: 0 auto;").NavButton Logout
+        else
+          a(href="/login" style="margin: 0 auto;").NavButton Login

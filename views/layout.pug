@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= `${title}`
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='https://code.jquery.com/jquery-3.6.0.min.js')
+
+  body
+    ul.nav
+      li.nav
+        img(src="/images/pubcord-logo.png" height="100px")
+      li#right
+        if isAuthenticated
+          a(href="/logout").NavButton Logout
+        else
+          a(href="/login").NavButton Login
+      li#righttitle
+        h2 Strike Database
+    block content
