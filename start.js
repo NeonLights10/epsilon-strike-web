@@ -1,5 +1,7 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
+var fs = require('fs')
+var https = require('https')
 
 mongoose.connect(process.env.DATABASE, {
   useNewUrlParser: true,
@@ -17,6 +19,9 @@ mongoose.connection
 require('./models/Warn');
 const app = require('./app');
 
-const server = app.listen(3000, () => {
+const server = https.createServer({
+  key: fs.readFileSync('server.key'),
+  cert: fs.readFileSync('server.cert')
+}, app).listen(3000, () => {
   console.log(`Express is running on port ${server.address().port}`);
 });
