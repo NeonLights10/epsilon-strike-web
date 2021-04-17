@@ -70,7 +70,7 @@ app.use(
                 scriptSrc: ["'self'", "https://code.jquery.com", "'unsafe-inline'", "'unsafe-eval'"],
                 connectSrc: ["'self'"],
                 styleSrc: ["'self'", "fonts.googleapis.com", "'unsafe-inline'"],
-                fontSrc: ["'self'", "data:", "fonts.googleapis.com"],
+                fontSrc: ["'self'", "data:", "fonts.gstatic.com"],
                 imgSrc: ["'self'"]
             }
         },
