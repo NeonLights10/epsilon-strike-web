@@ -30,7 +30,7 @@ function populateTable() {
         tableContent += '<td>' + d.toUTCString() + '</td>';
         tableContent += '<td>' + this.server_id + '</td>';
         tableContent += '<td>' + this.user_name + '</td>';
-        tableContent += '<td>' + this.user_id + '</td>';
+        tableContent += '<td>' + this.user_id.toString() + '</td>';
         tableContent += '<td>' + this.moderator + '</td>';
         tableContent += '<td><a href="' + this.message_link + '"">Go to Message</a></td>';
         tableContent += '<td>' + this.reason + '</td>';
