@@ -67,7 +67,11 @@ app.use(
         contentSecurityPolicy: {
             directives: {
                 defaultSrc: ["'self'"],
-                scriptSrc: ["'self'", "https://code.jquery.com"]
+                scriptSrc: ["'self'", "https://code.jquery.com"],
+                connectSrc: ["'self'"],
+                styleSrc: ["'self'", "fonts.googleapis.com", "'unsafe-inline'"],
+                fontSrc: ["'self'", "fonts.gstatic.com"],
+                imgSrc: ["'self'"]
             }
         },
     })
