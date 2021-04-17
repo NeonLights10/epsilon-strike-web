@@ -6,6 +6,7 @@ const warnSchema = new mongoose.Schema({
 	server_id: Number,
 	user_name: String,
 	user_id: Number,
+	moderator: String,
 	message_link: String,
 	reason: String
 });

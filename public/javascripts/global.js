@@ -29,6 +29,7 @@ function populateTable() {
         tableContent += '<td>' + this.server_id + '</td>';
         tableContent += '<td>' + this.user_name + '</td>';
         tableContent += '<td>' + this.user_id + '</td>';
+        tableContent += '<td>' + this.moderator + '</td>';
         tableContent += '<td><a href="' + this.message_link + '"">Go to Message</a></td>';
         tableContent += '<td>' + this.reason + '</td>';
         tableContent += '<td><a href="#" class="linkdeletestrike" rel="' + this._id + '">delete</a></td>';
