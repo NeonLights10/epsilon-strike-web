@@ -13,7 +13,6 @@ $(document).ready(function() {
 
 // Fill table with data
 function populateTable() {
-  console.log("We are populating")
 
   // Empty content string
   var tableContent = '';
