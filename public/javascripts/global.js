@@ -23,7 +23,7 @@ function populateTable() {
       d = new Date(this.time);
       this.time = d;
     }
-
+    // try sorting
     const sorteddata = data.sort((a, b) => b.time - a.time))
     // For each item in our JSON, add a table row and cells to the content string
     $.each(sorteddata, function(){
