@@ -19,9 +19,14 @@ function populateTable() {
 
   // jQuery AJAX call for JSON
   $.getJSON( '/strikes/strikelist', function( data ) {
-
-    // For each item in our JSON, add a table row and cells to the content string
     $.each(data, function(){
+      d = new Date(this.time);
+      this.time = d;
+    }
+    
+    const sorteddata = data.sort((a, b) => b.time - a.time)
+    // For each item in our JSON, add a table row and cells to the content string
+    $.each(sorteddata, function(){
       if (this.server_id === 432379300684103700) {
         tableContent += '<tr>';
         d = new Date(this.time);
