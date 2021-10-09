@@ -30,7 +30,7 @@ router.get('/strikelist', secured, (req, res, next) => {
     limit: 20
   }
 
-  logs.paginate({}, options).then((results, err) => {
+  Warn.paginate({}, options).then((results, err) => {
     if(!err) {
       //Pass total pages number to pug with result
       res.render('strike', {testObj: results.docs, page_count: results.totalPages})
