@@ -39,14 +39,16 @@ function populateTable() {
         tableContent += '<td><a href="#" class="linkdeletestrike" rel="' + this._id + '">delete</a></td>';
         tableContent += '</tr>';
       };
+    
+    var n = 1
+    while(n < data.totalPages+1) {
+      $('.pagination ul').append('<li><a href="/strikes?page='+n+'</a></li>')
+    }
+    
     });
 
     // Inject the whole content string into our existing HTML table
     $('#strikeList table tbody').html(tableContent);
-    var n = 1
-    while(n < results.totalPages+1) {
-      $('.pagination ul').append('<li><a href="/strikes?page='+n+'</a></li>')
-    }
   });
 };
 
