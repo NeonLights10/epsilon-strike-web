@@ -110,11 +110,11 @@ ul.pagination {
   list-style-type: none;
 }
 
-li.pagination-link{
+li.page-link{
   float: left;
 }
 
-a.pagination-link{
+a.page-link{
   display: block;
   color: white;
   text-align: center;
