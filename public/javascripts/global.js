@@ -41,10 +41,11 @@ function populateTable() {
         tableContent += '</tr>';
       };
     
-    var n = 1
+    var n = 1;
     while(n < data.totalPages+1) {
-      $('.pagination ul').append('<li><a href="/strikes?page='+n+'</a></li>')
-    }
+      $('.pagination ul').append('<li><a href="/strikes?page='+n+'</a></li>');
+      n++;
+    };
 
     });
 
