@@ -43,7 +43,8 @@ function populateTable() {
     
     var n = 1;
     while(n < data.totalPages+1) {
-      $('.pagination').append('<li><a href="/strikes?page='+n+'</a></li>');
+      content = '<li><a href="/strikes?page='+n+'</a></li>'
+      $('.pagination').append(content);
       n++;
     };
 
