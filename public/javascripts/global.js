@@ -18,12 +18,13 @@ function populateTable() {
 
   // jQuery AJAX call for JSON
   $.getJSON( ('/strikes/strikelist?page='+pageParam), function( data ) {
-    $.each(data, function(){
+    results = data.docs
+    $.each(results, function(){
       d = new Date(this.time);
       this.time = d;
     });
     // try sorting
-    const sorteddata = data.sort((a, b) => b.time - a.time)
+    const sorteddata = results.sort((a, b) => b.time - a.time)
     // For each item in our JSON, add a table row and cells to the content string
     $.each(sorteddata, function(){
       if (this.server_id === 432379300684103700) {
@@ -44,7 +45,7 @@ function populateTable() {
     while(n < data.totalPages+1) {
       $('.pagination ul').append('<li><a href="/strikes?page='+n+'</a></li>')
     }
-    
+
     });
 
     // Inject the whole content string into our existing HTML table

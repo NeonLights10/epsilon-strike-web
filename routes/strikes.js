@@ -33,7 +33,7 @@ router.get('/strikelist', secured, (req, res, next) => {
   Warn.paginate({}, options).then((results, err) => {
     if(!err) {
       //Pass total pages number to pug with result
-      res.json(results.docs)
+      res.json(results)
     }
   });
 });
