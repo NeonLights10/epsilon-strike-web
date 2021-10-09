@@ -13,8 +13,14 @@ function populateTable() {
   // Empty content string
   var tableContent = '';
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const pageParam = urlParams.get('page')
+  if(window.location.search.length > 0) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const pageParam = urlParams.get('page')
+  }
+  else {
+    const pageParam = '1'
+    window.history.pushState(null, "Strike Database", "/strikes?page=1");
+  }
 
   // jQuery AJAX call for JSON
   $.getJSON( ('/strikes/strikelist?page='+pageParam), function( data ) {
