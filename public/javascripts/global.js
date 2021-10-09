@@ -42,7 +42,7 @@ function populateTable() {
       };
     
     var n = 1;
-    // $('.pagination').html(data.totalPages);
+    $('.pagination').html('<p>Total Pages: ' + data.totalPages.toString() + '</p>');
     while(n < data.totalPages+1) {
       content = '<li class="page-link"><a class="page-link" href="/strikes?page='+n.toString()+'">'+n.toString()+'</a></li>'
       $('.pagination').append(content);
