@@ -44,8 +44,9 @@ function populateTable() {
     // Inject the whole content string into our existing HTML table
     $('#strikeList table tbody').html(tableContent);
     var n = 1
-    while n < results.totalPages+1:
+    while(n < results.totalPages+1) {
       $('.pagination ul').append('<li><a href="/strikes?page='+n+'</a></li>')
+    }
   });
 };
 
