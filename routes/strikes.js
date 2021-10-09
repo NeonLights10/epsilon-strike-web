@@ -35,10 +35,6 @@ router.get('/strikelist', secured, (req, res, next) => {
       //Pass total pages number to pug with result
       res.render('strike', {testObj: results.docs, page_count: results.totalPages})
     }
-  }
-
-  Warn.find({},{},function(e,docs){
-  	res.json(docs)
   });
 });
 
