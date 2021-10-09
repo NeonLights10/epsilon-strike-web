@@ -133,4 +133,6 @@ a.page-link{
 
   border-bottom: var(--ui-shadow-border);
   box-shadow: var(--ui-shadow);
+  
+  margin: 0px 10px 20px 0px;
 }
