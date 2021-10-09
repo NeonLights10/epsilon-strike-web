@@ -43,7 +43,7 @@ router.get("/callback", (req, res, next) => {
       return next(err);
     }
     if (!user) {
-      return res.send('access denied. contact Neon#5555 for access.');
+      return res.send('Access denied. contact Neon#5555 for access.');
     }
     req.logIn(user, (err) => {
       if (err) {

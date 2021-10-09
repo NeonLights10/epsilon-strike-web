@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const mongoosePaginate = require('mongoose-paginate-v2');
 require('mongoose-long')(mongoose);
 const {Types: {Long}} = mongoose;
 
@@ -13,4 +14,5 @@ const warnSchema = new mongoose.Schema({
 	reason: String
 });
 
+warnSchema.plugin(mongoosePaginate);
 module.exports = mongoose.model('Warn', warnSchema, 'warns');

@@ -24,37 +24,30 @@ router.get('/', secured, (req, res, next) => {
 
 /* GET users listing. */
 router.get('/strikelist', secured, (req, res, next) => {
-  function paginatedResults() {
-    return async (req, res, next) => {
-      
-      const page = parseInt(req.query.page);
-      const limit = parseInt(req.query.limit);
-      const skipIndex = (page - 1) * limit;
-      const results = {};
-
-      try {
-        results.results = await Warn.find()
-          .sort({ time: -1 })
-          .limit(limit)
-          .skip(skipIndex)
-          .exec();
-        res.paginatedResults = results;
-        next();
-      } catch (e) {
-        res.status(500).json({ message: "Error Occured" });
-      }
-    };
+  const {page} = req.query;
+  const options = {
+    page: parseInt(page, 10) || 1,
+    limit: 20
   }
-  paginatedResults()
-  res.json(res.paginatedResults)
+
+  logs.paginate({}, options).then((results, err) => {
+    if(!err) {
+      //Pass total pages number to pug with result
+      res.render('strike', {testObj: results.docs, page_count: results.totalPages})
+    }
+  }
+
+  Warn.find({},{},function(e,docs){
+  	res.json(docs)
+  });
 });
 
 /* DELETE to deletestrike */
 router.delete('/deletestrike/:id', secured, (req, res, next) => {
-  var strikeToDelete = req.params.id;
-  Warn.deleteOne({ '_id' : strikeToDelete }, function(err) {
-    res.send((err === null) ? { msg: '' } : { msg:'error: ' + err });
-  });
+	var strikeToDelete = req.params.id;
+	Warn.deleteOne({ '_id' : strikeToDelete }, function(err) {
+		res.send((err === null) ? { msg: '' } : { msg:'error: ' + err });
+	});
 });
 
 module.exports = router;

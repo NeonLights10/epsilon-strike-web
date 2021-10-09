@@ -14,8 +14,11 @@ function populateTable() {
   // Empty content string
   var tableContent = '';
 
+  const urlParams = new URLSearchParams(window.location.search);
+  const pageParam = urlParams.get('page')
+
   // jQuery AJAX call for JSON
-  $.getJSON( '/strikes/strikelist', function( data ) {
+  $.getJSON( ('/strikes/strikelist?page='+pageParam), function( data ) {
     $.each(data, function(){
       d = new Date(this.time);
       this.time = d;
