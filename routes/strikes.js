@@ -26,6 +26,7 @@ router.get('/', secured, (req, res, next) => {
 router.get('/strikelist', secured, (req, res, next) => {
   const {page} = req.query;
   const options = {
+    sort: { time: -1 },
     page: parseInt(page, 10) || 1,
     limit: 20
   }
