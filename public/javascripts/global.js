@@ -12,13 +12,13 @@ function populateTable() {
 
   // Empty content string
   var tableContent = '';
+  var pageParam = 1;
 
   if(window.location.search.length > 0) {
     const urlParams = new URLSearchParams(window.location.search);
-    const pageParam = urlParams.get('page');
+    pageParam = urlParams.get('page');
   }
   else {
-    const pageParam = '1';
     window.history.pushState(null, "Strike Database", "/strikes?page=1");
   }
 
