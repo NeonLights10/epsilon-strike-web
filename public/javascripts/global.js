@@ -44,7 +44,7 @@ function populateTable() {
     var n = 1;
     $('.pagination').html(data.totalPages);
     while(n < data.totalPages+1) {
-      content = '<li class="pagination-link"><a href="/strikes?page='+n.toString()+'">'+n.toString()+'</a></li>'
+      content = '<li class="pagination-link"><a class="pagination-link" href="/strikes?page='+n.toString()+'">'+n.toString()+'</a></li>'
       $('.pagination').append(content);
       n++;
     };
