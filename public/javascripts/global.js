@@ -15,10 +15,9 @@ function populateTable() {
 
   if(window.location.search.length > 0) {
     const urlParams = new URLSearchParams(window.location.search);
-    const pageParam = urlParams.get('page')
-  }
+    const pageParam = urlParams.get('page');
   else {
-    const pageParam = '1'
+    const pageParam = '1';
     window.history.pushState(null, "Strike Database", "/strikes?page=1");
   }
 
