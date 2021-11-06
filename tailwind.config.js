@@ -9,7 +9,10 @@ module.exports = {
       '0p5': '0.125rem',
       '2p5': '0.625rem',
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'home-bg': "url('/images/bg.jpg')",
+    },
   },
   variants: {
     extend: {},
