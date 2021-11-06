@@ -6,12 +6,13 @@ html
     script(src="https://code.jquery.com/jquery-3.6.0.min.js")
 
   body
-    ul.nav
-      li.nav
-        img(src="/images/pubcord-logo.png" height="100px")
-      li#right
+    div.flex-auto.flex
+      div.w-8out12
+        img(src="/images/pubcord-logo.png").max-w-lg
+      div.w-4out12.mt-7.flex-auto.flex.space-x-3.items-center.justify-center
         if isAuthenticated
-          a(href="/logout").NavButton Logout
+          a(href="/").py-3.mt-0.mx-auto.mb-2p5.w-1of2.flex.items-center.justify-center.rounded-md.bg-gradient-to-r.from-cyan-400.to-sky-500.text-white.font-semibold.text-base Home
+          a(href="/logout").py-3.mt-0.mx-auto.mb-2p5.w-1of2.flex.items-center.justify-center.rounded-md.bg-gradient-to-r.from-red-400.to-pink-500.text-white.font-semibold.text-base Logout
         else
           a(href="/login").NavButton Login
       li#righttitle
