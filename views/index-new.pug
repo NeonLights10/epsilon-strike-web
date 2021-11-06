@@ -5,8 +5,9 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='https://code.jquery.com/jquery-3.6.0.min.js')
   body.p-8.bg-home-bg
-    div.flex.items-center.justify-center.text-center.max-w-2xl.p-5.mx-auto.mt-2.bg-white.border-4.border-solid.border-red-500.rounded-sm
-      img(src="/images/pubcord-logo.png").max-w-lg
+    div.text-center.max-w-2xl.p-5.mx-auto.mt-2.bg-white.border-4.border-solid.border-red-500.rounded-sm
+      div.flex.items-center.justify-center
+        img(src="/images/pubcord-logo.png").max-w-lg
       h2.mt-7.text-2xl.font-bold Strike Database Web App
       div.mt-7.flex-auto.flex.space-x-3.items-center.justify-center
         if isAuthenticated
