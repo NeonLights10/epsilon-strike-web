@@ -3,6 +3,10 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      colors: {
+        cyan: colors.cyan,
+        sky: colors.sky,
+      },
       width: {
         '1of2': '50%',
       },
