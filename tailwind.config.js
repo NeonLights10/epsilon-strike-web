@@ -6,8 +6,8 @@ module.exports = {
       '1of2': '50%',
     },
     margin: {
-      '0p5': 0.125rem,
-      '2p5': 0.625rem,
+      '0p5': '0.125rem',
+      '2p5': '0.625rem',
     },
     extend: {},
   },
