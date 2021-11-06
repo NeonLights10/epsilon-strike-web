@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'home-bg': "url('/images/bg.jpg')",
+      },
     },
   },
   variants: {
