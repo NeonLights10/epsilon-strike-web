@@ -1,12 +1,13 @@
 {
   "name": "epsilon",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "watch": "nodemon ./start.js"
+    "watch": "nodemon ./start.js",
     "tailwind:css": "postcss public/styles/tailwind.css -o public/styles/style.css"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.0",
     "compression": "^1.7.4",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -21,7 +22,12 @@
     "passport": "^0.4.1",
     "passport-auth0": "^1.4.0",
     "pug": "^3.0.2",
-    "touch": "^3.1.0"
+    "mongoose-long": "^0.3.2",
+    "mongoose-paginate-v2": "^1.4.2",
+    "postcss": "^8.3.11",
+    "postcss-cli": "^9.0.2",
+    "pug": "^3.0.2",
+    "tailwindcss": "^2.2.19"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
