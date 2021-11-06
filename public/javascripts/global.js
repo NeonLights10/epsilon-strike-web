@@ -55,7 +55,7 @@ function populateTable() {
     var n = 1;
     $('.pagination').html('<p>Total Pages: ' + data.totalPages.toString() + '</p>');
     while(n < data.totalPages+1) {
-      content = '<a class="text-center justify-center p-3 w-10 h-10 bg-gradient-to-tr from-red-400 to-pink-400 rounded-md font-bold text-white" href="/strikes?page='+n.toString()+'"><p class="-mt-2">'+n.toString()+'</p></a>'
+      content = '<a class="text-center justify-center my-2 p-3 w-10 h-10 bg-gradient-to-tr from-red-400 to-pink-400 rounded-md font-bold text-white" href="/strikes?page='+n.toString()+'"><p class="-mt-2">'+n.toString()+'</p></a>'
       $('.pagination').append(content);
       n++;
     };
