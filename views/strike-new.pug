@@ -1,27 +1,28 @@
 extends layout
 block content
   div.pagination.flex-auto.flex.space-x-3.p-5
-  div.min-h-screen.bg-gray-100.py-6.flex.flex-col.justify-center#strikecontent
-    div.relative.py-3.max-w-7xl.sm_mx-auto.hidden
-      div.relative.px-4.py-3.bg-white.shadow-lg.sm_rounded-3xl.sm_px-10
-        div.max-w-8xl.mx-auto
-        div.divide-y.divide-gray-200
-          div.py-5.text-base.leading-6.space-y-4.text-gray-700.sm_text-lg.sm_leading-7
-            div.p-3.bg-gradient-to-tr.from-red-400.to-pink-400
-              h2.text-xs Server ID: #
-                h3.font-semibold Time: Sun, 00 Jan 0000 00:00:00 GMT
-            div.py-3
-              ul.list-disc.space-y-2
-                li.flex.items-start.flex-wrap
-                  p.font-bold.text-lg.ml-5.w-8out12 Username#0000
-                  p.text-base.w-3out12 Moderator: name
-                  p.text-xs.ml-5.w-full User ID: #
-                li.flex.items-start.flex-wrap
-                  h4.ml-5.font-semibold.w-full Reason:
-                  p.ml-5.mr-10.text-base.text-justify.w-full reason
-            div
-              div.flex-auto.flex.space-x-3.p-5
-                button.py-3.w-1of2.flex.items-center.justify-center.rounded-md.bg-gradient-to-r.from-cyan-400.to-sky-500.text-black.font-semibold Go To Message
-                button.py-3.w-1of2.flex.items-center.justify-center.rounded-md.bg-gradient-to-tr.from-red-400.to-red-500.font-semibold Delete
+  div.min-h-screen.bg-gray-100.py-6.flex.flex-col.items-center.justify-center#strikecontent
+    div.max-w-7xl
+      div.relative.py-3.sm_mx-auto.hidden
+        div.relative.px-4.py-3.bg-white.shadow-lg.sm_rounded-3xl.sm_px-10
+          div.max-w-8xl.mx-auto
+          div.divide-y.divide-gray-200
+            div.py-5.text-base.leading-6.space-y-4.text-gray-700.sm_text-lg.sm_leading-7
+              div.p-3.bg-gradient-to-tr.from-red-400.to-pink-400
+                h2.text-xs Server ID: #
+                  h3.font-semibold Time: Sun, 00 Jan 0000 00:00:00 GMT
+              div.py-3
+                ul.list-disc.space-y-2
+                  li.flex.items-start.flex-wrap
+                    p.font-bold.text-lg.ml-5.w-8out12 Username#0000
+                    p.text-base.w-3out12 Moderator: name
+                    p.text-xs.ml-5.w-full User ID: #
+                  li.flex.items-start.flex-wrap
+                    h4.ml-5.font-semibold.w-full Reason:
+                    p.ml-5.mr-10.text-base.text-justify.w-full reason
+              div
+                div.flex-auto.flex.space-x-3.p-5
+                  button.py-3.w-1of2.flex.items-center.justify-center.rounded-md.bg-gradient-to-r.from-cyan-400.to-sky-500.text-black.font-semibold Go To Message
+                  button.py-3.w-1of2.flex.items-center.justify-center.rounded-md.bg-gradient-to-tr.from-red-400.to-red-500.font-semibold Delete
   div.pagination.flex-auto.flex.space-x-3.p-5
   script(src='/javascripts/global.js')
