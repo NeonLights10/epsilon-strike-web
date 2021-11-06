@@ -34,6 +34,7 @@ function populateTable() {
     // For each item in our JSON, add a table row and cells to the content string
     $.each(sorteddata, function(){
       if (this.server_id === 432379300684103700) {
+        console.log('adding entry')
         tableContent += '<div class="relative py-3 max-w-7xl sm_mx-auto"><div class="relative px-4 py-3 bg-white shadow-lg sm_rounded-3xl sm_px-10"><div class="max-w-8xl mx-auto"><div class="divide-y divide-gray-200"><div class="py-5 text-base leading-6 space-y-4 text-gray-700 sm_text-lg sm_leading-7"><div class="p-3 bg-gradient-to-r from-red-400 to-pink-400">';
         d = new Date(this.time);
         tableContent += '<h2 class="text-xs">Server ID: ' + this.server_id + '</h2>';
@@ -47,6 +48,9 @@ function populateTable() {
         tableContent += '<a id="deletebutton" class="w-1/2 flex items-center justify-center rounded-md bg-gradient-to-tr from-red-400 to-red-500 font-semibold py-2" href="#" rel="' + this._id + '">Delete</a>';
         tableContent += '</div></div></div></div></div></div>';
       };
+    // Inject the whole content string into our existing HTML table
+    $('#strikecontent').append(tableContent);
+    tableContent = '';
 
     var n = 1;
     $('.pagination').html('<p>Total Pages: ' + data.totalPages.toString() + '</p>');
@@ -57,9 +61,6 @@ function populateTable() {
     };
 
     });
-
-    // Inject the whole content string into our existing HTML table
-    $('#strikecontent').html(tableContent);
   });
 };
 
