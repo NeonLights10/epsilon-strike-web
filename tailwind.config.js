@@ -4,11 +4,11 @@ module.exports = {
   theme: {
     width: {
       '1of2': '50%',
-    }
+    },
     margin: {
       '0p5': 0.125rem,
       '2p5': 0.625rem,
-    }
+    },
     extend: {},
   },
   variants: {
