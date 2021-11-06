@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "watch": "nodemon ./start.js"
+    "tailwind:css": "postcss public/styles/tailwind.css -o public/styles/style.css"
   },
   "dependencies": {
     "compression": "^1.7.4",
@@ -15,11 +16,12 @@
     "helmet": "^4.4.1",
     "http-auth": "^4.1.5",
     "http-errors": "~1.6.3",
-    "mongoose": "^5.12.3",
+    "mongoose": "^6.0.12",
     "morgan": "~1.9.1",
     "passport": "^0.4.1",
     "passport-auth0": "^1.4.0",
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "touch": "^3.1.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"

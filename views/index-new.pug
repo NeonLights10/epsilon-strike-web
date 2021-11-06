@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title= `${title}`
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='https://code.jquery.com/jquery-3.6.0.min.js')
+  body.p-8
+    div.text-center.max-w-lg.p-5.mx-0.5.my-auto.bg-white.border-4.border-solid.border-red-500.rounded-sm
+      img(src="/images/pubcord-logo.png").max-w-lg
+      h2.mt-7 Strike Database Web App
+      div.mt-7.flex-auto.flex.space-x-3
+        if isAuthenticated
+          a(href="/strikes").mt-0.mx-auto.mb-2.5.w-1/2.flex.items-center.justify-center.rounded-md.bg-gradient-to-r.from-cyan-400.to-sky-500.text-white.font-semibold Open Database
+          a(href="/logout").mt-0.mx-auto.mb-2.5.w-1/2.flex.items-center.justify-center.rounded-md.bg-gradient-to-r.from-red-400.to-pink-500.text-white.font-semibold Logout
+        else
+          a(href="/login").mt-0.mx-auto.mb-2.5.w-1/2.flex.items-center.justify-center.rounded-md.bg-gradient-to-r.from-green-300.to-green-500.text-white.font-semibold Login

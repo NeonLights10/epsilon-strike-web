@@ -16,7 +16,7 @@ const secured = (req, res, next) => {
 
 /* GET home page. */
 router.get('/', (req, res) => {
-  res.render('index', { title: 'Home' });
+  res.render('index-new', { title: 'Home' });
 });
 
 router.get("/user", secured, (req, res, next) => {
