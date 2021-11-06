@@ -1,6 +1,7 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
+  separator: '_',
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -11,6 +12,8 @@ module.exports = {
       },
       width: {
         '1of2': '50%',
+        '8out12': '66.666667%',
+        '3out12': '25%',
       },
       margin: {
         '0p5': '0.125rem',

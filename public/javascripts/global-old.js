@@ -34,24 +34,23 @@ function populateTable() {
     // For each item in our JSON, add a table row and cells to the content string
     $.each(sorteddata, function(){
       if (this.server_id === 432379300684103700) {
-        tableContent += '<div class="relative py-3 max-w-7xl sm_mx-auto"><div class="relative px-4 py-3 bg-white shadow-lg sm_rounded-3xl sm_px-10"><div class="max-w-8xl mx-auto"><div class="divide-y divide-gray-200"><div class="py-5 text-base leading-6 space-y-4 text-gray-700 sm_text-lg sm_leading-7"><div class="p-3 bg-gradient-to-r from-red-400 to-pink-400">';
+        tableContent += '<tr>';
         d = new Date(this.time);
-        tableContent += '<h2 class="text-xs">Server ID: ' + this.server_id + '</h2>';
-        tableContent += '<h3 class="font-semibold">Time: ' + d.toUTCString() + '</h3>';
-        tableContent += '</div></div><div class="py-3"><ul class="list-disc space-y-2"><li class="flex items-start flex-wrap">'
-        tableContent += '<p class="font-bold text-lg ml-5 w-8out12">' + this.user_name + '</p>';
-        tableContent += '<p class="text-base w-3out12">Moderator: ' + this.moderator + '</p>';
-        tableContent += '<p class="text-xs ml-5 w-full">User ID: ' + this.user_id.toString() + '</p></li><li class="flex items-start flex-wrap">';
-        tableContent += '<h4 class="ml-5 font-semibold w-full">Reason</h4><p class="ml-5 mr-10 text-base text-justify w-full">' + this.reason + '</p></li></ul></div><div><div class="flex-auto flex space-x-3 p-5">';
-        tableContent += '<a class="py-3 w-1/2 flex items-center justify-center rounded-md bg-gradient-to-r from-cyan-400 to-sky-500 text-black font-semibold py-2" href="' + this.message_link + '">Go To Message</button></form>';
-        tableContent += '<a id="deletebutton" class="w-1/2 flex items-center justify-center rounded-md bg-gradient-to-tr from-red-400 to-red-500 font-semibold py-2" href="#" rel="' + this._id + '">Delete</a>';
-        tableContent += '</div></div></div></div></div></div>';
+        tableContent += '<td>' + d.toUTCString() + '</td>';
+        tableContent += '<td>' + this.server_id + '</td>';
+        tableContent += '<td>' + this.user_name + '</td>';
+        tableContent += '<td>' + this.user_id.toString() + '</td>';
+        tableContent += '<td>' + this.moderator + '</td>';
+        tableContent += '<td><a href="' + this.message_link + '"">Go to Message</a></td>';
+        tableContent += '<td>' + this.reason + '</td>';
+        tableContent += '<td><a href="#" class="linkdeletestrike" rel="' + this._id + '">delete</a></td>';
+        tableContent += '</tr>';
       };
 
     var n = 1;
     $('.pagination').html('<p>Total Pages: ' + data.totalPages.toString() + '</p>');
     while(n < data.totalPages+1) {
-      content = '<a class="text-center justify-center p-3 w-10 h-10 bg-gradient-to-tr from-red-400 to-pink-400 rounded-md" href="/strikes?page='+n.toString()+'"><p class="-mt-2">'+n.toString()+'</p></a>'
+      content = '<li class="page-link"><a class="page-link" href="/strikes?page='+n.toString()+'">'+n.toString()+'</a></li>'
       $('.pagination').append(content);
       n++;
     };
@@ -59,12 +58,12 @@ function populateTable() {
     });
 
     // Inject the whole content string into our existing HTML table
-    $('#strikecontent').html(tableContent);
+    $('#strikeList table tbody').html(tableContent);
   });
 };
 
 // Delete User link click
-$('#strikecontent').on('click', '#deletebutton', deleteStrike);
+$('#strikeList table tbody').on('click', 'td a.linkdeletestrike', deleteStrike);
 
 // Delete User
 function deleteStrike(event) {

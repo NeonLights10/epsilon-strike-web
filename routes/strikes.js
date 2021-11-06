@@ -19,7 +19,7 @@ const secured = (req, res, next) => {
 };
 
 router.get('/', secured, (req, res, next) => {
-  res.render('strike', { title: 'Strike Database' });
+  res.render('strike-new', { title: 'Strike Database' });
 });
 
 /* GET users listing. */
