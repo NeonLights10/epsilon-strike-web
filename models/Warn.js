@@ -8,12 +8,14 @@ const warnSchema = new mongoose.Schema({
 	time: Date,
 	server_id: Number,
 	user_name: String,
-	user_id: Long,
+	user_id: {
+	    type: Long,
+	    transform: v => v.toString()
+	},
 	moderator: String,
 	message_link: String,
 	reason: String
 });
 
 warnSchema.plugin(mongoosePaginate);
-mongoose.Schema.Types.Long.set('transform', v => v.toString());
 module.exports = mongoose.model('Warn', warnSchema, 'warns');
