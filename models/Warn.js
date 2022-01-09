@@ -15,4 +15,5 @@ const warnSchema = new mongoose.Schema({
 });
 
 warnSchema.plugin(mongoosePaginate);
+mongoose.Schema.Types.Long.set('transform', v => v.toString());
 module.exports = mongoose.model('Warn', warnSchema, 'warns');
