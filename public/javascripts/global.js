@@ -35,6 +35,7 @@ function populateTable() {
     $.each(sorteddata, function(){
       if (this.server_id === 432379300684103700) {
         console.log('adding entry')
+        console.log(JSON.stringify(this))
         tableContent += '<div class="relative py-3 sm_mx-auto"><div class="relative px-4 py-3 bg-white shadow-lg sm_rounded-3xl sm_px-10"><div class="max-w-8xl mx-auto"><div class="divide-y divide-gray-200"><div class="py-5 text-base leading-6 space-y-4 text-gray-700 sm_text-lg sm_leading-7"><div class="p-3 bg-gradient-to-r from-red-400 to-pink-400">';
         d = new Date(this.time);
         tableContent += '<h2 class="text-xs">Server ID: ' + this.server_id + '</h2>';
